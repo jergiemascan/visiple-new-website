@@ -1,0 +1,87 @@
+.headerPositionFixed {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  padding: 1rem;
+  color: var(--white);
+}
+.headerPositionStatic {
+  position: static;
+  color: var(--black-200);
+  width: 100%;
+  padding: 1rem;
+}
+.headerContentWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+.loginButton {
+  background-color: var(--btn-bg-gray);
+  max-width: 4.5rem !important;
+  color: var(--black-200) !important;
+  transition: 0.2s ease-in-out;
+  display: none !important;
+  opacity: 0;
+}
+.loginButton:hover {
+  background-color: var(--bg-black100);
+  color: var(--white) !important;
+}
+
+.svg {
+  width: fit-content;
+  cursor: pointer;
+  z-index: 10;
+  background-color: transparent;
+}
+.svg rect {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.verticalNavigation {
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease-in-out, opacity 0.3s, visibility 0.3s;
+}
+
+.verticalNavigationVisible {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transition: transform 0.3s ease-in-out, opacity 0.3s, visibility 0.3s;
+}
+
+@media only screen and (min-width: 420px) {
+  .headerPositionFixed,
+  .headerPositionStatic {
+    padding: 1rem 1rem 0 1rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+  .loginButton {
+    opacity: 1;
+    display: flex !important;
+  }
+  .svg {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .headerPositionFixed,
+  .headerPositionStatic {
+    padding: 1rem 2.5rem 0 2.5rem;
+  }
+}

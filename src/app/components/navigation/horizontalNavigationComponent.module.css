@@ -1,0 +1,15 @@
+.nav {
+  display: none;
+  opacity: 0;
+}
+.ul {
+  display: flex;
+  gap: 3rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .nav {
+    opacity: 1;
+    display: block;
+  }
+}

@@ -1,0 +1,42 @@
+.button {
+  width: 100%;
+  height: 2.4rem;
+  line-height: 1.2;
+  font-family: var(--nunito);
+  font-size: var(--semi-md);
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  border-radius: var(--sm-border-radius);
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+/* .button:hover {
+  background-color: var(--bg-black100);
+  color: var(--white) !important;
+} */
+
+.priceButton {
+  composes: button;
+  background-color: var(--gray);
+  padding: 0.8rem 5rem;
+  font-size: var(--sm);
+  border: none;
+  border-radius: 6px;
+}
+
+/* .priceButton:hover {
+  background-color: var(--gray);
+  color: inherit !important;
+} */
+@media only screen and (min-width: 600px) {
+  .button {
+    width: 17rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .button {
+    width: 20.625rem;
+  }
+}

@@ -1,0 +1,13 @@
+.button {
+  width: 100%;
+  height: 2.4rem;
+  line-height: 1.2;
+  font-family: var(--nunito);
+  font-size: var(--md);
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  border: none;
+  border-radius: var(--sm-border-radius);
+  background-color: var(--green-300);
+  cursor: pointer;
+}

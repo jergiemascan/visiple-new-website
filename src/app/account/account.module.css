@@ -1,0 +1,57 @@
+.accountContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  padding: 0 1rem;
+}
+.span hr {
+  width: 10rem;
+  margin: 0 10px;
+  border: none;
+  height: 1px;
+  background-color: var(--bg-gray);
+}
+.buttonWrapper {
+  padding: 1.5rem 1rem 0 1rem;
+  width: 100%;
+}
+.button {
+  background-color: var(--gray);
+}
+@media only screen and (min-width: 500px) {
+  .buttonWrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1rem;
+    padding: 1.5rem 0 0 0;
+  }
+  .button {
+    grid-column: 2 / span 10;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .button {
+    width: 100% !important;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .button {
+    grid-column: 4 / span 6;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .buttonWrapper {
+    max-width: 555px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .button {
+    grid-column: 2 / span 10;
+  }
+}

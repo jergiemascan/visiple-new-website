@@ -1,0 +1,33 @@
+.hero {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  color: var(--white);
+}
+.heroContentWrapper {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  bottom: 8%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 1rem;
+  align-items: center;
+}
+@media only screen and (min-width: 500px) {
+  .heroContentWrapper {
+    padding: 0 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .heroContentWrapper {
+    padding: 0;
+  }
+}

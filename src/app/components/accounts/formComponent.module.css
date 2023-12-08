@@ -1,0 +1,100 @@
+.formContainer {
+  width: 100%;
+  margin: 0 auto;
+}
+.formWrapper {
+  width: 100%;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+.formWrapper h1 {
+  font-size: var(--xl-plus);
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+.formGroup {
+  gap: var(--xxs);
+  padding-top: var(--lg);
+}
+.formGroup label {
+  font-family: var(--label-font-family);
+  font-size: var(--md);
+  font-weight: var(--label-font-weight);
+  color: var(--gray-50);
+  letter-spacing: 0.5px;
+}
+.formGroup input {
+  background-color: var(--input-bg-color);
+  font-family: var(--input-font-family);
+  font-weight: var(--input-font-weight);
+  font-size: var(--md);
+  border: none;
+  border-radius: var(--sm-border-radius);
+  color: var(--gray-50);
+  padding: var(--xxs);
+  letter-spacing: 0.2px;
+}
+.formGroup textarea {
+  min-height: 8.5rem;
+}
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border: 0.01px solid var(--input-focus-color);
+}
+.buttonWrapper {
+  margin-top: 2rem;
+}
+.button {
+  color: var(--white);
+  transition: all 0.2s ease-in-out;
+}
+.button:hover {
+  background-color: var(--green-400);
+}
+
+@media only screen and (min-width: 500px) {
+  .formContainer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    width: 100%;
+    grid-gap: 1rem;
+  }
+  .formWrapper {
+    width: 100%;
+    padding: 0;
+    grid-column: 2 / span 10;
+  }
+  .buttonWrapper {
+    margin-top: 2rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .formWrapper h1 {
+    font-size: var(--xxl);
+  }
+}
+@media only screen and (min-width: 700px) {
+  .formWrapper {
+    grid-column: 3 / span 8;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .formWrapper {
+    grid-column: 4 / span 6;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .formWrapper {
+    grid-column: 2 / span 10;
+  }
+  .formContainer {
+    max-width: 555px;
+  }
+}

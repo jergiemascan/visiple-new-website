@@ -209,12 +209,6 @@ p {
   transition: transform 0.5s ease-in-out;
 }
 
-/* .scrollSnap {
-  scroll-snap-type: y mandatory !important;
-  overflow-y: scroll !important;
-  height: 100%;
-} */
-
 .fade-in {
   opacity: 1;
   transform: translate(0, 0);

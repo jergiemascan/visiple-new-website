@@ -11,6 +11,7 @@ import { usePathname } from "next/navigation"
 
 const HeaderComponent = () => {
   const [expanded, setExpanded] = useState(false)
+  const [isLargeScreen, setIsLargeScreen] = useState(false)
   const { headerPosition, svgFillColor } = useHeaderStyle()
   const pathname = usePathname()
   const home = "/"
@@ -31,13 +32,22 @@ const HeaderComponent = () => {
     }
   }, [expanded])
 
+  useEffect(() => {
+    // Check the window width on client side
+    const handleResize = () => {
+      setIsLargeScreen(window.screen.width > 500)
+    }
+
+    handleResize() // Call it initially
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
   return (
     <header
       className={`${styles.headerContentWrapper} ${styles.headerPositionFixed} ${styles[headerPosition]}`}
       style={
-        (expanded || isHome) && window.screen.width > 500
-          ? { paddingRight: "2rem" }
-          : {}
+        (expanded || isHome) && isLargeScreen ? { paddingRight: "2rem" } : {}
       }
     >
       <Link href="/" className={styles.logo}>

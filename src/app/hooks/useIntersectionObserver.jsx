@@ -6,17 +6,20 @@ const useIntersectionObserver = options => {
   const [isIntersecting, setIntersecting] = useState(false)
 
   useEffect(() => {
+    const currentRef = ref.current
     const observer = new IntersectionObserver(([entry]) => {
       // Update our state when observer callback fires
       setIntersecting(entry.isIntersecting)
     }, options)
-    if (ref.current) {
-      observer.observe(ref.current)
+    if (currentRef) {
+      observer.observe(currentRef)
     }
     return () => {
-      observer.unobserve(ref.current)
+      if (currentRef) {
+        observer.unobserve(currentRef)
+      }
     }
-  }, []) // Empty array ensures that effect is only run on mount and unmount
+  }, [])
 
   return [ref, isIntersecting]
 }

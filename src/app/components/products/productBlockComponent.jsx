@@ -14,10 +14,13 @@ const ProductBlockComponent = ({
   price,
   subscribeLink,
   reverse = false,
+  className,
 }) => {
   return (
     <section
-      className={`${styles.productContainer} ${reverse ? styles.reverse : ""}`}
+      className={`${styles.productContainer} ${className} ${
+        reverse ? styles.reverse : ""
+      }`}
     >
       <Image
         className={styles.image}
@@ -28,6 +31,7 @@ const ProductBlockComponent = ({
           objectFit: "cover",
           objectPosition: "center",
           height: "100%",
+          width: "100%",
         }}
         layout="responsive"
       />

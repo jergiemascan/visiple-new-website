@@ -1,36 +1,40 @@
 import React from "react"
 import styles from "./aboutComponent.module.css"
-import Image from "next/image"
+import { AboutList } from "../utilities/aboutList"
+import { AboutHeading, AboutItem } from "./aboutElements"
 
 const AboutComponent = () => {
   return (
-    <div className={styles.aboutWrapper}>
-      <div>
-        <Image
-          className={styles.image}
-          src="/images/logo2.png"
-          alt="Visiple logo"
-          priority
-          width="50"
-          height="50"
-        />
+    <section className={styles.aboutContainer}>
+      <AboutHeading />
+
+      <div className={styles.bodyContent}>
+        {AboutList.map((about, index) => (
+          <AboutItem
+            key={index}
+            about={about}
+            className={`${index % 2 === 0 ? styles.even : styles.odd}`}
+          />
+        ))}
+
+        <div className={styles.teamWrapper}>
+          <h2>Visiple Team</h2>
+          <div className={styles.headingText}>
+            <p>
+              Our international team has years of experience in
+              telecommunications, video conferencing, marketing and UX, with a
+              history of delivering market relevant products and partnerships
+              that drive value across the board from user to meeting
+              participant. From best-in-class and first of its kind video
+              conferencing services in the early days of video conferencing, to
+              now developing award winning solutions with Blue Ocean approaches
+              have led to explosive adoption. All thanks to our dedication to
+              the user experience.
+            </p>
+          </div>
+        </div>
       </div>
-      <h1>About Visiple</h1>
-      <div className={styles.aboutTextWrapper}>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quo
-          beatae possimus magnam asperiores temporibus debitis animi velit,
-          illum, consequuntur eius dolor praesentium, harum saepe non
-          aspernatur. Placeat recusandae voluptatum, est nam ratione totam
-          laudantium dignissimos fugiat ullam aspernatur quas quisquam ipsum
-          impedit! Porro aspernatur doloribus commodi corrupti vitae, nulla
-          maiores odio itaque ratione repellat totam rerum, eveniet nihil
-          architecto quasi consectetur nisi quibusdam ut! Totam aliquid placeat
-          accusamus. Officiis perferendis doloremque ratione obcaecati
-          consequatur dolores inventore, cupiditate tempora optio itaque eos.
-        </p>
-      </div>
-    </div>
+    </section>
   )
 }
 

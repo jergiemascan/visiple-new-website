@@ -24,13 +24,16 @@ const Login = () => {
     /* Handle registration submission */
   }
   return (
-
-    <FormComponent
-      title="Sign In"
-      buttonTitle="Sign In"
-      fields={loginFieldItems}
-      onSubmit={onSubmit}
-    />
+    <div className="page-container ">
+      <div className="page-inner-container ">
+        <FormComponent
+          title="Sign In"
+          buttonTitle="Sign In"
+          fields={loginFieldItems}
+          onSubmit={onSubmit}
+        />
+      </div>
+    </div>
   )
 }
 

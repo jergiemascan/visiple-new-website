@@ -1,14 +1,40 @@
 .hero {
-  height: 100vh;
-  width: 100%;
+  color: var(--white) !important;
   position: relative;
-  overflow: hidden;
   z-index: 1;
   background-position: center;
   display: flex;
   justify-content: center;
-  color: var(--white);
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  transition: all 0.3s ease-out;
 }
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5) 10%,
+    rgba(0, 0, 0, 0) 20%
+  ); */
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  z-index: 1;
+}
+.image {
+  position: relative;
+  z-index: 0;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100vh;
+}
+
 .heroContentWrapper {
   width: 100%;
   position: absolute;
@@ -20,14 +46,72 @@
   padding: 0 1rem;
   align-items: center;
 }
+
+.heroButtonsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 8rem;
+  align-items: center;
+}
+.homepageButtonWhite {
+  background-color: var(--white);
+  color: var(--black-200) !important;
+  transition: 0.2s ease-in-out;
+}
+.homepageButtonWhite:hover {
+  background-color: var(--bg-black100);
+  color: var(--white) !important;
+}
+
+.homepageButtonTransparent {
+  background-color: transparent;
+  border: 2px solid var(--white);
+  color: var(--white) !important;
+  transition: 0.2s ease-in-out;
+}
+.homepageButtonTransparent:hover {
+  background-color: var(--white);
+  color: var(--black-200) !important;
+  border: none;
+}
+
+.footer {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: var(--white);
+}
+
+@media only screen and (min-width: 480px) {
+  .heroButtonsContainer {
+    margin-top: 15rem;
+  }
+}
 @media only screen and (min-width: 500px) {
   .heroContentWrapper {
     padding: 0 1.5rem;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .heroButtonsContainer {
+    flex-direction: row;
+    width: 34.5rem;
   }
 }
 
 @media only screen and (min-width: 992px) {
   .heroContentWrapper {
     padding: 0;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .heroButtonsContainer {
+    margin-top: 20rem;
   }
 }

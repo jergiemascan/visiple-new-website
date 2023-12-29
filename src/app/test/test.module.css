@@ -1,0 +1,144 @@
+.bg {
+  /* background-color: var(--gray-40); */
+  padding: 2rem 0;
+  gap: 3rem;
+}
+.buttons {
+  background-color: var(--gray-40);
+}
+.homepageButtonWhite {
+  background-color: var(--white);
+  color: var(--black-200) !important;
+  transition: 0.2s ease-in-out;
+}
+.homepageButtonWhite:hover {
+  background-color: var(--bg-black100);
+  color: var(--white) !important;
+}
+
+.homepageButtonTransparent {
+  background-color: transparent;
+  border: 2px solid var(--white);
+  color: var(--white) !important;
+  transition: 0.2s ease-in-out;
+}
+.homepageButtonTransparent:hover {
+  background-color: var(--white);
+  color: var(--black-200) !important;
+  border: none;
+}
+.sourceSans {
+  font-family: var(--source-sans);
+  font-size: var(--xxl);
+  /* font-weight: 700; */
+}
+.sourceSerif {
+  font-family: var(--source-serif);
+  font-size: var(--xxl);
+  /* font-weight: 700; */
+}
+.nunito {
+  font-family: var(--nunito);
+  font-size: var(--xxl);
+  /* font-weight: 700; */
+}
+.sansP {
+  font-family: var(--source-sans);
+  font-size: var(--md);
+}
+.sourceSerifP {
+  font-family: var(--source-serif);
+  font-size: var(--md);
+}
+.nunitoP {
+  font-family: var(--nunito);
+  font-size: var(--md);
+}
+.p {
+  font-size: var(--lg);
+}
+
+.h3Nunito {
+  font-family: var(--nunito);
+  font-weight: 500;
+  font-size: var(--xl);
+  margin-bottom: 1rem;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+  color: var(--green-200);
+}
+
+.loginButton {
+  background-color: var(--btn-bg-gray);
+  /* background-color: var(--white); */
+  max-width: 4.5rem !important;
+  /* color: var(--black-200) !important; */
+  transition: 0.2s ease-in-out;
+  letter-spacing: 0.2px;
+}
+.loginButton:hover {
+  background-color: var(--bg-black100);
+  background-color: var(--green-200);
+  color: var(--white) !important;
+}
+
+.button {
+  /* background-color: var(--green-300); */
+  color: var(--white);
+  transition: all 0.2s ease-in-out;
+}
+.button:hover {
+  background-color: var(--green-400);
+}
+.buttonBlue {
+  width: 100%;
+  height: 2.4rem;
+  line-height: 1.2;
+  font-family: var(--nunito);
+  font-size: var(--md);
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  border: none;
+  border-radius: var(--sm-border-radius);
+  background-color: var(--blue-100);
+  color: var(--white) !important;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.buttonBlue:hover {
+  background-color: var(--blue-200);
+}
+.buttonBlue200 {
+  width: 100%;
+  height: 2.4rem;
+  line-height: 1.2;
+  font-family: var(--nunito);
+  font-size: var(--md);
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  border: none;
+  border-radius: var(--sm-border-radius);
+  background-color: var(--blue-200);
+  color: var(--white) !important;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.buttonBlue200:hover {
+  background-color: var(--blue-100);
+}
+
+.heroButton {
+  /* background-color: var(--white); */
+  color: var(--black-200) !important;
+  border: 2px solid var(--black-200);
+  transition: 0.2s ease-in-out;
+}
+.heroButton:hover {
+  background-color: var(--bg-black100);
+  color: var(--white) !important;
+}
+@media only screen and (min-width: 600px) {
+  .buttonsContainer {
+    max-width: 17rem;
+  }
+}

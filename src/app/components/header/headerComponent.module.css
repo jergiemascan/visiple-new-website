@@ -24,14 +24,17 @@
 }
 .loginButton {
   background-color: var(--btn-bg-gray);
+  /* background-color: var(--white); */
   max-width: 4.5rem !important;
-  color: var(--black-200) !important;
+  /* color: var(--black-200) !important; */
   transition: 0.2s ease-in-out;
   display: none !important;
   opacity: 0;
+  letter-spacing: 0.2px;
 }
 .loginButton:hover {
   background-color: var(--bg-black100);
+  background-color: var(--green-200);
   color: var(--white) !important;
 }
 
@@ -58,18 +61,7 @@
   transition: transform 0.3s ease-in-out, opacity 0.3s, visibility 0.3s;
 }
 
-@media only screen and (min-width: 420px) {
-  .headerPositionFixed,
-  .headerPositionStatic {
-    padding: 1rem 1rem 0 1rem;
-  }
-}
-
 @media only screen and (min-width: 992px) {
-  .logo {
-    width: 50px;
-    height: 50px;
-  }
   .loginButton {
     opacity: 1;
     display: flex !important;
@@ -80,8 +72,7 @@
 }
 
 @media only screen and (min-width: 1200px) {
-  .headerPositionFixed,
-  .headerPositionStatic {
-    padding: 1rem 2.5rem 0 2.5rem;
+  .headerPositionFixed {
+    padding: 1rem 2.5rem;
   }
 }

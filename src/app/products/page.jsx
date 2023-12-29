@@ -7,11 +7,12 @@ import styles from "./productsHero.module.css"
 
 const Products = () => {
   return (
-    <>
+    <section>
       <HeroComponent
         src="/images/product-hero.png"
         alt="Video conference from home, hero"
         priority
+        className="scrollToFullElement"
       >
         <ButtonLink href="/account/register" className={styles.heroButton}>
           Subscribe Now
@@ -20,12 +21,13 @@ const Products = () => {
 
       {ProductsList.map((products, index) => (
         <ProductBlockComponent
+          className="scrollToFullElement"
           key={index}
           {...products}
           reverse={index % 2 !== 0}
         />
       ))}
-    </>
+    </section>
   )
 }
 

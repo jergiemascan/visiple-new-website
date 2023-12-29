@@ -1,13 +1,14 @@
 .footer {
+  padding: 1rem 0;
+  background-color: transparent;
+}
+.footer a {
+  font-size: var(--semi-md) !important;
+}
+.footer ul {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  color: var(--black-200);
-  padding: 2rem 0;
-  background-color: transparent;
-}
-.ul {
-  display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
 }

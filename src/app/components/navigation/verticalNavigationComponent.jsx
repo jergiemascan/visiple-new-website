@@ -1,68 +1,25 @@
 import React from "react"
 import Link from "next/link"
 import styles from "./verticalNavigationComponent.module.css"
+import { VerticalNavigationList } from "../utilities/verticalNavigationList"
 
 const VerticalNavigationComponent = ({ setExpanded, expanded }) => {
   return (
     <nav className={styles.nav}>
       <ul className={styles.navListWrapper}>
-        <li>
-          <Link
-            className="flex-row justify-between "
-            href="/products"
-            onClick={() => setExpanded(false)}
-          >
-            <span className="span-semi-lg">Products</span>
-            <svg
-              class="icon"
-              viewBox="0 0 16 16"
-              xmlns="http://www.w3.org/2000/svg"
+        {VerticalNavigationList.map((navlist, index) => (
+          <li key={index} className={styles.list}>
+            <Link
+              className="flex-row justify-between align-center"
+              href={navlist.href}
+              onClick={() => setExpanded(false)}
             >
-              <path
-                fill="var(--gray-200)"
-                d="M4.975 2.75a.748.748 0 0 1 1.281-.53l5.25 5.264a.75.75 0 0 1 0 1.06L6.283 13.78a.75.75 0 1 1-1.062-1.06l4.695-4.706L5.194 3.28a.748.748 0 0 1-.219-.53z"
-              ></path>
-            </svg>
-          </Link>
-        </li>
-        <li>
-          <Link
-            className="flex-row justify-between "
-            href="/about-us"
-            onClick={() => setExpanded(false)}
-          >
-            <span className="span-semi-lg">About</span>
-            <svg
-              class="icon"
-              viewBox="0 0 16 16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill="var(--gray-200)"
-                d="M4.975 2.75a.748.748 0 0 1 1.281-.53l5.25 5.264a.75.75 0 0 1 0 1.06L6.283 13.78a.75.75 0 1 1-1.062-1.06l4.695-4.706L5.194 3.28a.748.748 0 0 1-.219-.53z"
-              ></path>
-            </svg>
-          </Link>
-        </li>
-        <li>
-          <Link
-            className="flex-row justify-between "
-            href="/blog"
-            onClick={() => setExpanded(false)}
-          >
-            <span className="span-semi-lg">Blog</span>
-            <svg
-              class="icon"
-              viewBox="0 0 16 16"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fill="var(--gray-200)"
-                d="M4.975 2.75a.748.748 0 0 1 1.281-.53l5.25 5.264a.75.75 0 0 1 0 1.06L6.283 13.78a.75.75 0 1 1-1.062-1.06l4.695-4.706L5.194 3.28a.748.748 0 0 1-.219-.53z"
-              ></path>
-            </svg>
-          </Link>
-        </li>
+              <span className="span-semi-lg">{navlist.title}</span>
+              <div>{navlist.svg}</div>
+            </Link>
+          </li>
+        ))}
+
         <li>
           <Link
             className="flex-row"

@@ -1,9 +1,13 @@
-import React from 'react'
-import AboutComponent from '../components/about/aboutComponent'
+import React from "react"
+import AboutComponent from "../components/about/aboutComponent"
 
 const About = () => {
   return (
-    <AboutComponent/>
+    <div className="page-container ">
+      <div className="page-inner-container ">
+        <AboutComponent />
+      </div>
+    </div>
   )
 }
 

@@ -4,10 +4,12 @@ import { useForm } from "react-hook-form"
 import styles from "./formComponent.module.css"
 import ButtonAccounts from "../button/buttonAccounts/buttonAccounts"
 import CountrySelectorComponent from "./countrySelectorComponent"
+import { useInView } from "react-intersection-observer"
 
 const FormComponent = ({ title, buttonTitle, fields, onSubmit }) => {
   const { register, handleSubmit, errors } = useForm()
   const [selectedCountry, setSelectedCountry] = useState(null)
+  const [childrenRef, childrenInView] = useInView({ triggerOnce: true })
 
   const formFields = field => {
     switch (field.type) {
@@ -46,7 +48,7 @@ const FormComponent = ({ title, buttonTitle, fields, onSubmit }) => {
               name={field.name}
             />
             <label htmlFor={field.id}>{field.label}</label>
-            <p>Term and Conditions here</p>
+            <p>Terms and Conditions here</p>
           </div>
         )
       case "textarea":
@@ -70,7 +72,12 @@ const FormComponent = ({ title, buttonTitle, fields, onSubmit }) => {
   }
 
   return (
-    <section className={styles.formContainer}>
+    <section
+      ref={childrenRef}
+      className={`${childrenInView ? "fade-in " : "not-appear-up"} ${
+        styles.formContainer
+      }`}
+    >
       <div className={styles.formWrapper}>
         <h1>{title}</h1>
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>

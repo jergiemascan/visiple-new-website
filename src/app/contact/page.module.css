@@ -1,0 +1,14 @@
+.contactGridWrapper {
+  display: grid;
+  grid-gap: 2rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .contactGridWrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0;
+  }
+  .contactGridWrapper > *:last-child {
+    margin-top: 10rem;
+  }
+}

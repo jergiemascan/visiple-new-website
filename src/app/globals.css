@@ -1,12 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Source+Serif+4:ital,opsz,wght@0,8..60,200;0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,300&display=swap");
 
 *,
-::after,
-::before {
+*::after,
+*::before {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  scroll-behavior: smooth;
 }
 
 :root {
@@ -27,13 +26,14 @@
   --xl: 1.5rem; /* 24 */
   --xl-plus: 1.75rem; /* 28*/
   --xxl: 2rem; /* 32px */
-  --xxxl: 2.375rem; /* 38px */
+  --xxl-plus: 2.375rem; /* 38px */
 
   /*COLORS*/
+  --black: #141414;
   --black-100: #000000;
   --black-200: #171a20;
 
-  --white: #ffffff;
+  --white: #fff;
   --gray: #f4f4f4;
   --gray-40: #d0d1d2;
   --gray-50: #5c5e62;
@@ -53,9 +53,14 @@
   --sm-border-radius: 4px;
   --md-border-radius: 6px;
 
+  --border-green200: 1px solid var(--green-200);
+  --border-gray: 1px solid var(--gray);
   --border-gray100: 1px solid var(--gray-100);
   --border-gray200: 1px solid var(--gray-200);
   --border-black100: 1px solid var(--black-100);
+
+  /* SHADOWS */
+  --shadow-black: 0px 4px 8px rgba(0, 0, 0, 0.2);
 
   /*BACKGROUND*/
   --bg-black100: var(--black-100);
@@ -70,8 +75,11 @@
   --input-bg-color: var(--bg-gray);
 
   --btn-bg-black: rgba(0, 0, 0, 0.2);
-  --btn-bg-gray: rgba(244, 244, 244, 0.8);
+  --btn-bg-gray: rgba(244, 244, 244, 0.5);
   --btn-bg-gray200: rgba(56, 59, 64, 0.8);
+
+  /* THEME BG */
+  --img-bg-theme: rgba(var(--black), 0.5);
 
   /* BREAKPOINTS */
   --bp-xxs: 0px;
@@ -84,6 +92,9 @@
 
 html,
 body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
   overflow-x: hidden;
   font-family: var(--source-sans), var(--source-serif), sans-serif;
   color: var(--black-200);
@@ -101,14 +112,13 @@ li {
   text-decoration: none;
   list-style: none;
   font-family: var(--nunito);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.46px;
   line-height: var(--lg);
   font-size: var(--md);
 }
 a:active,
 a:visited {
-  /* color: var(--white); */
   color: inherit;
 }
 h1 {
@@ -129,7 +139,9 @@ span {
 .icon {
   width: var(--xl);
 }
-
+p {
+  font-family: var(--nunito);
+}
 .flex-column {
   display: flex;
   flex-direction: column;
@@ -140,8 +152,18 @@ span {
   flex-direction: row;
   gap: 1rem;
 }
+.align-center {
+  align-items: center;
+}
+.gap0 {
+  gap: 0;
+}
+
 .justify-between {
   justify-content: space-between;
+}
+.grid {
+  display: grid;
 }
 .layout {
   display: flex;
@@ -149,25 +171,199 @@ span {
   min-height: 100vh;
   width: 100%;
 }
-
 .main {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100%;
-  flex: 1;
-  justify-content: center;
+  flex-grow: 1;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+.padding-2 {
+  padding: 2rem 0;
+}
+.relative {
+  position: relative;
+}
+.footer {
+  position: absolute;
+  bottom: -3.5rem;
+  z-index: 2;
 }
 
 .width-column {
-  width: 80%;
+  width: 90%;
 }
 
-@media only screen and (min-width: 992px) {
-  h1 {
-    font-size: var(--xxxl);
+.mt0 {
+  margin-top: 0;
+}
+/* ANIMATIONS */
+.rotate90degree {
+  transform: rotate(90deg);
+  transition: transform 0.5s ease-in-out;
+}
+.rotate0degree {
+  transform: rotate(0deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+/* .scrollSnap {
+  scroll-snap-type: y mandatory !important;
+  overflow-y: scroll !important;
+  height: 100%;
+} */
+
+.fade-in {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+.fade-inTitle {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  transition-delay: 0.5s;
+}
+.fade-inImage {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  transition-delay: 0.3s;
+}
+
+.not-appear-down {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+.not-appear-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.not-appear-side {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+.scrollSnapContainer {
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  transition: all 0.3s ease-out;
+}
+.scrollSnapElement {
+  height: 100vh;
+  scroll-snap-align: start;
+  transition: all 0.3s ease-out;
+}
+
+/* font weights */
+.fw100 {
+  font-weight: 100;
+  font-size: var(--md);
+}
+.fw200 {
+  font-weight: 200;
+}
+.fw300 {
+  font-weight: 300;
+}
+.fw500 {
+  font-weight: 500;
+}
+.fw600 {
+  font-weight: 600;
+}
+.fw700 {
+  font-weight: 700;
+}
+.fw800 {
+  font-weight: 800;
+}
+.padding {
+  margin: 2rem 0;
+}
+.width100 {
+  width: 100%;
+}
+.width25 {
+  width: 25%;
+}
+
+.div {
+  height: 4rem;
+  width: 13rem;
+}
+
+.bg-black200 {
+  background-color: var(--black-200);
+}
+.bg-gray {
+  background-color: var(--gray);
+}
+.bg-white {
+  background-color: var(--white);
+}
+.bg-green {
+  background-color: var(--green);
+}
+.bg-green300 {
+  background-color: var(--green-300);
+}
+.bg-green400 {
+  background-color: var(--green-400);
+}
+.bg-blue100 {
+  background-color: var(--blue-100);
+}
+.bg-blue200 {
+  background-color: var(--blue-200);
+}
+
+.bg {
+  background-color: #000000;
+}
+.color-white {
+  color: var(--white);
+}
+.color-primary {
+  color: var(--black-200);
+}
+
+.page-container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+.page-inner-container {
+  margin-top: 62px;
+  margin-bottom: 62px;
+  padding: 0 1rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .page-inner-container {
+    margin-top: 116px;
+    padding: 0 2rem;
   }
 }
+@media only screen and (min-width: 992px) {
+  h1 {
+    font-size: var(--xxl-plus);
+  }
+}
+
+@media only screen and (min-width: 1550px) {
+  .page-inner-container {
+    padding: 0;
+  }
+}
+
 /* display: flex;
   flex-direction: column;
   min-height: 100vh;

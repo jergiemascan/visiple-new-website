@@ -1,14 +1,12 @@
 "use client"
-import React from "react"
 import { usePathname } from "next/navigation"
 
 const useHeaderStyle = () => {
   const pathname = usePathname()
 
-  const paths = ["/", "/products"]
+  const paths = ["/", "/products", "/costumer-service/faq"]
   const isPath = paths.includes(pathname)
-  console.log("Current path:", pathname)
-  console.log("Is path:", isPath)
+
   return {
     isPath,
     headerPosition: isPath ? "headerPositionFixed" : "headerPositionStatic",

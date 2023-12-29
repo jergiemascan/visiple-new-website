@@ -8,12 +8,16 @@ const Register = () => {
     /* Handle registration submission */
   }
   return (
-    <FormComponent
-      title="Create Account"
-      buttonTitle="Register"
-      fields={registrationFieldItems}
-      onSubmit={onSubmit}
-    />
+    <div className="page-container ">
+      <div className="page-inner-container ">
+        <FormComponent
+          title="Create Account"
+          buttonTitle="Register"
+          fields={registrationFieldItems}
+          onSubmit={onSubmit}
+        />
+      </div>
+    </div>
   )
 }
 

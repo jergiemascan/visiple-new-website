@@ -1,4 +1,6 @@
+"use client"
 import React from "react"
+import { useInView } from "react-intersection-observer"
 import Image from "next/image"
 import styles from "./productBlockComponent.module.css"
 import ButtonLink from "../button/buttonLink"
@@ -16,6 +18,9 @@ const ProductBlockComponent = ({
   reverse = false,
   className,
 }) => {
+  const [ref, inView] = useInView({ triggerOnce: true })
+  const [aboutRef, aboutInView] = useInView({ triggerOnce: true })
+
   return (
     <section
       className={`${styles.productContainer} ${className} ${
@@ -23,7 +28,7 @@ const ProductBlockComponent = ({
       }`}
     >
       <Image
-        className={styles.image}
+        className={`${styles.image}`}
         src={src}
         alt={alt}
         loading="lazy"
@@ -36,7 +41,10 @@ const ProductBlockComponent = ({
         layout="responsive"
       />
       <div className={styles.productContentWrapper}>
-        <div>
+        <div
+          ref={aboutRef}
+          className={`${aboutInView ? "fade-in " : "not-appear-up"}`}
+        >
           <h2 className={styles.h2}>{productName}</h2>
           <h3 className={styles.h3}>{title}</h3>
           <div className={styles.productsSpecification}>
@@ -58,7 +66,12 @@ const ProductBlockComponent = ({
             </ul>
           </div>
         </div>
-        <div className={styles.productButtonWrapper}>
+        <div
+          ref={ref}
+          className={`${styles.productButtonWrapper} ${
+            inView ? "fade-inTitle" : "not-appear-up"
+          }`}
+        >
           <PriceButton>{price}</PriceButton>
           <ButtonLink href={subscribeLink} className={styles.productButton}>
             Subscribe Now

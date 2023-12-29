@@ -50,6 +50,7 @@
 .productButton {
   border: 2px solid var(--black-200);
   transition: 0.2s ease-in-out;
+  margin: 0 auto;
 }
 .productButton:hover {
   background-color: var(--bg-black100);

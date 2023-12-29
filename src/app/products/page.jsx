@@ -9,12 +9,15 @@ const Products = () => {
   return (
     <section>
       <HeroComponent
-        src="/images/product-hero.png"
+        src="/images/products/product-hero.png"
         alt="Video conference from home, hero"
         priority
         className="scrollToFullElement"
       >
-        <ButtonLink href="/account/register" className={styles.heroButton}>
+        <ButtonLink
+          className={`${styles.heroButton} `}
+          href="/account/register"
+        >
           Subscribe Now
         </ButtonLink>
       </HeroComponent>

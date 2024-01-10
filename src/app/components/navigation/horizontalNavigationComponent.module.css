@@ -6,6 +6,26 @@
   display: flex;
   gap: 3rem;
 }
+.ul li a {
+  position: relative;
+}
+
+.ul a::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: -2px;
+  left: 0px;
+  background: var(--green-200);
+  transition: all 400ms cubic-bezier(0.165, 0.84, 0.44, 1) 0s;
+  transform: scaleX(0);
+  transform-origin: 0% 100%;
+  padding: 0;
+}
+.ul a:hover::after {
+  transform: scaleX(1);
+}
 
 @media only screen and (min-width: 992px) {
   .nav {

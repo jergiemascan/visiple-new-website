@@ -1,42 +1,28 @@
 "use client"
-import React, { useState } from "react"
+import React from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import styles from "./horizontalNavigationComponent.module.css"
-import NavigationModal from "./modal/navigationModal"
+import { HorizontalNavigationList } from "../utilities/horizontalNavigationList"
 
 const HorizontalNavigationComponent = () => {
-  const [hoveredItem, setHoveredItem] = useState(null)
+  const pathname = usePathname()
 
   return (
     <>
       <nav className={styles.nav}>
         <ul className={styles.ul}>
-          <li
-          // onMouseEnter={() => setHoveredItem("products")}
-          // onMouseLeave={() => setHoveredItem(null)}
-          >
-            <Link href="/products">Products</Link>
-          </li>
-          <li
-          // onMouseEnter={() => setHoveredItem("about")}
-          // onMouseLeave={() => setHoveredItem(null)}
-          >
-            <Link href="/contact">Contact</Link>
-          </li>
-          <li
-          // onMouseEnter={() => setHoveredItem("blog")}
-          // onMouseLeave={() => setHoveredItem(null)}
-          >
-            <Link href="/blog">Blog</Link>
-          </li>
-          <li
-          // onMouseEnter={() => setHoveredItem("blog")}
-          // onMouseLeave={() => setHoveredItem(null)}
-          >
-            <Link href="/test">[Test]</Link>
-          </li>
+          {HorizontalNavigationList.map((link, index) => {
+            const isActive = pathname.startsWith(link.href)
+            return (
+              <li key={index}>
+                <Link href={link.href} className={isActive ? "activeLink" : ""}>
+                  {link.name}
+                </Link>
+              </li>
+            )
+          })}
         </ul>
-        {/* {hoveredItem && <NavigationModal item={hoveredItem} />} */}
       </nav>
     </>
   )

@@ -1,0 +1,21 @@
+.textWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.textWrapper h2 {
+  padding-bottom: var(--sm);
+}
+
+.textWrapper p {
+  padding-bottom: var(--semi-md);
+}
+
+@media only screen and (min-width: 900px) {
+  .termsContainer {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+}

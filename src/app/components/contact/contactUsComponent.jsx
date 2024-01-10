@@ -15,12 +15,12 @@ const ContactUsComponent = () => {
             styles.contactInfo
           }`}
         >
-          <h2>Visiple HQ</h2>
-          <div>
+          <h2>Visiple Locations</h2>
+          {/* <div>
             <span>Phone</span>
             <p>+1860 333 9167</p>
-          </div>
-          <p>
+          </div> */}
+          {/* <p>
             Press meetings
             <br />
             <a
@@ -31,14 +31,27 @@ const ContactUsComponent = () => {
             >
               meetings@visiple.com
             </a>
-          </p>
+          </p> */}
           <div>
-            <span>Address</span>
+            <span>Address (US)</span>
             <p>77 - 79 Green Street</p>
             <p>
               New London,
               <br />
               CT 06320, USA
+            </p>
+            <div className={styles.phone}>
+              <p>Phone</p>
+              <p>+1860 333 9167</p>
+            </div>
+          </div>
+          <div>
+            <span>Address (EMEA)</span>
+            <p>2069</p>
+            <p>
+              Jessheim,
+              <br />
+              Norway
             </p>
           </div>
 
@@ -53,67 +66,6 @@ const ContactUsComponent = () => {
                 objectPosition: "center",
               }}
             />{" "}
-            {/* <img
-              src="/images/contact/map12.jpg"
-              alt="Visiple location map"
-              style={{
-                width: "100%",
-                height: "auto",
-                objectFit: "cover",
-                objectPosition: "center",
-              }}
-            /> */}
-            {/* 
-            <img
-              src="/images/contact/image4.jpg"
-              alt="Visiple location map"
-              style={{
-                width: "100%",
-                height: "auto",
-                objectFit: "cover",
-                objectPosition: "center",
-              }}
-            />
-            <img
-              src="/images/contact/image3.jpg"
-              alt="Visiple location map"
-              style={{
-                width: "100%",
-                height: "auto",
-                objectFit: "cover",
-                objectPosition: "center",
-              }}
-            />
-            <img
-              src="/images/contact/image2.jpg"
-              alt="Visiple location map"
-              style={{
-                width: "100%",
-                height: "auto",
-                objectFit: "cover",
-                objectPosition: "center",
-              }}
-            />
-            <img
-              src="/images/contact/map6.jpg"
-              alt="Visiple location map"
-              style={{
-                width: "100%",
-                height: "auto",
-                objectFit: "cover",
-                objectPosition: "center",
-              }}
-            />
-            <img
-              src="/images/contact/map12.jpg"
-              alt="Visiple location map"
-              style={{
-                width: "100%",
-                height: "auto",
-                objectFit: "cover",
-                objectPosition: "center",
-              }}
-            /> */}
           </div>
         </div>
       </div>

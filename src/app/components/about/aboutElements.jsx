@@ -6,7 +6,6 @@ import { useInView } from "react-intersection-observer"
 
 export const AboutHeading = () => {
   const [titleRef, titleInView] = useInView({ triggerOnce: true })
-  const [aboutRef, aboutInView] = useInView({ triggerOnce: true })
 
   return (
     <div className={styles.topHeading}>
@@ -24,18 +23,6 @@ export const AboutHeading = () => {
       >
         About Visiple
       </h1>
-      <div
-        ref={aboutRef}
-        className={`${styles.headingText}
-          ${aboutInView ? "fade-in " : "not-appear-up"}`}
-      >
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quo
-          beatae possimus magnam asperiores temporibus debitis animi velit,
-          illum, consequuntur eius dolor praesentium, harum saepe non
-          aspernatur.
-        </p>
-      </div>
     </div>
   )
 }

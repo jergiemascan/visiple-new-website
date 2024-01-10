@@ -10,13 +10,10 @@
 .topHeading h1 {
   margin-bottom: 2rem;
   margin-top: 1rem;
-  font-size: var(--xl-plus);
+  font-size: var(--xxl);
   letter-spacing: -0.7px;
 }
-.headingText {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-}
+
 .aboutContainer p {
   letter-spacing: 0.2px;
   font-size: var(--md);
@@ -50,6 +47,7 @@
 
 .gridContent {
   display: grid;
+  align-items: center;
 }
 
 @media only screen and (min-width: 500px) {
@@ -57,21 +55,15 @@
     grid-gap: 5rem;
   }
   .topHeading,
-  .headingText p,
   .teamWrapper h2 {
     text-align: center;
   }
   .logo {
     display: inline-block;
   }
-  .headingText p {
-    grid-column: 2 / span 10;
-  }
+
   .bodyContent {
     grid-gap: 4rem;
-  }
-  .topHeading h1 {
-    font-size: var(--xxl);
   }
 }
 
@@ -86,12 +78,7 @@
     font-size: var(--xxl-plus);
   }
 
-  .headingText p {
-    grid-column: 3 / span 8;
-    font-size: var(--semi-lg);
-  }
   .bodyContent {
-    margin-top: 3rem;
     grid-gap: 2rem;
   }
   .bodyContent p {

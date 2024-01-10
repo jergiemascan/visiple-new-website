@@ -9,6 +9,7 @@
     grid-gap: 0;
   }
   .contactGridWrapper > *:last-child {
-    margin-top: 10rem;
+    /* margin-top: 10rem; */
+    margin-top: 7.5rem;
   }
 }

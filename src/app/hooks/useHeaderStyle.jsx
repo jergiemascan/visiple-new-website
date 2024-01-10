@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation"
 const useHeaderStyle = () => {
   const pathname = usePathname()
 
-  const paths = ["/", "/products", "/costumer-service/faq"]
+  const paths = ["/", "/costumer-service/faq"]
   const isPath = paths.includes(pathname)
 
   return {

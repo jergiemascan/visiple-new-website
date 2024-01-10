@@ -33,12 +33,11 @@ const HeaderComponent = () => {
   }, [expanded])
 
   useEffect(() => {
-    // Check the window width on client side
     const handleResize = () => {
       setIsLargeScreen(window.screen.width > 500)
     }
 
-    handleResize() // Call it initially
+    handleResize()
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
@@ -47,7 +46,7 @@ const HeaderComponent = () => {
     <header
       className={`${styles.headerContentWrapper} ${styles.headerPositionFixed} ${styles[headerPosition]}`}
       style={
-        (expanded || isHome) && isLargeScreen ? { paddingRight: "2rem" } : {}
+        expanded || (isHome && isLargeScreen) ? { paddingRight: "2rem" } : {}
       }
     >
       <Link href="/" className={styles.logo}>
@@ -60,7 +59,7 @@ const HeaderComponent = () => {
         />
       </Link>
       <HorizontalNavigation />
-      <ButtonLink href="/account/login" className={styles.loginButton}>
+      <ButtonLink href="/account/signin" className={styles.loginButton}>
         Login
       </ButtonLink>
 

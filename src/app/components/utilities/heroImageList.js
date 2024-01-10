@@ -1,20 +1,15 @@
-import { Component } from "react"
-import FooterComponent from "../footer/footerComponent"
-
 export const HeroImageList = [
   {
-    src: "/images/home/hero.png",
-    // src: hero,
+    src: "/images/home/img-01.png",
     alt: "group video call image",
-    title: "Your modern platform for cloud-based meetings.",
+    title: "A digital workspace designed for your lifestyle.",
     buttons: [
       { href: "/account/register", text: "Subscribe Now" },
       { href: "/products", text: "View Plans" },
     ],
   },
   {
-    src: "/images/home/cozy-in-fire.jpg",
-    // src: cozyInFire,
+    src: "/images/home/img-02.jpg",
     alt: "A man working outdoor with a cozy bornfire",
     title: 'For people who call "remote work" ...work.',
     buttons: [
@@ -23,7 +18,7 @@ export const HeroImageList = [
     ],
   },
   {
-    src: "/images/home/image01.png",
+    src: "/images/home/img-03.png",
     alt: "video call image",
     title: 'For people who are "there" already.',
     buttons: [
@@ -32,8 +27,7 @@ export const HeroImageList = [
     ],
   },
   {
-    src: "/images/home/under-the-sun.png",
-    // src: underTheSun,
+    src: "/images/home/img-04.png",
     alt: "Video conference by the beach",
     title: "For people who hustle under the sun.",
     buttons: [
@@ -42,14 +36,12 @@ export const HeroImageList = [
     ],
   },
   {
-    src: "/images/home/family-call.jpg",
-    // src: familyCall,
+    src: "/images/home/img-05.jpg",
     alt: "Family video call ",
     title: "For people who want to spend time with their loved ones.",
     buttons: [
       { href: "/account/register", text: "Subscribe Now" },
       { href: "/products", text: "Learn More" },
     ],
-    // component: <FooterComponent />,
   },
 ]

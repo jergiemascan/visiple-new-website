@@ -1,10 +1,11 @@
 "use client"
 import React, { useState } from "react"
 import { useForm } from "react-hook-form"
+import Link from "next/link"
+import { useInView } from "react-intersection-observer"
 import styles from "./formComponent.module.css"
 import ButtonAccounts from "../button/buttonAccounts/buttonAccounts"
 import CountrySelectorComponent from "./countrySelectorComponent"
-import { useInView } from "react-intersection-observer"
 
 const FormComponent = ({ title, buttonTitle, fields, onSubmit }) => {
   const { register, handleSubmit, errors } = useForm()
@@ -17,7 +18,7 @@ const FormComponent = ({ title, buttonTitle, fields, onSubmit }) => {
       case "email":
       case "password":
         return (
-          <div className={`flex-column ${styles.formGroup}`}>
+          <div key={field.id} className={`flex-column ${styles.formGroup}`}>
             <label htmlFor={field.id}>{field.label}</label>
             <input
               // ref={register}
@@ -30,7 +31,7 @@ const FormComponent = ({ title, buttonTitle, fields, onSubmit }) => {
 
       case "countrySelector":
         return (
-          <div className={`flex-column ${styles.formGroup}`}>
+          <div key={field.id} className={`flex-column ${styles.formGroup}`}>
             <label htmlFor={field.id}>{field.label}</label>
             <CountrySelectorComponent
               value={selectedCountry}
@@ -40,20 +41,23 @@ const FormComponent = ({ title, buttonTitle, fields, onSubmit }) => {
         )
       case "checkbox":
         return (
-          <div className={`flex-row ${styles.formGroup}`}>
-            <input
+          <div key={field.id} className={`flex-row ${styles.formGroup}`}>
+            {/* <input
               // ref={register}
               type="checkbox"
               id={field.id}
               name={field.name}
-            />
+            /> */}
             <label htmlFor={field.id}>{field.label}</label>
-            <p>Terms and Conditions here</p>
+            <p>
+              By creating an account, I agree to Visiple&apos;s
+              <Link href="/legal-terms">Terms of Use.</Link>
+            </p>
           </div>
         )
       case "textarea":
         return (
-          <div className={`flex-column ${styles.formGroup}`}>
+          <div key={field.id} className={`flex-column ${styles.formGroup}`}>
             <label htmlFor={field.id}>{field.label}</label>
             <textarea
               // ref={register}

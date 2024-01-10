@@ -23,7 +23,7 @@ const VerticalNavigationComponent = ({ setExpanded, expanded }) => {
         <li>
           <Link
             className="flex-row"
-            href="/account"
+            href="/account/signin"
             onClick={() => setExpanded(false)}
           >
             <svg

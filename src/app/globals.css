@@ -59,6 +59,9 @@
   --border-gray200: 1px solid var(--gray-200);
   --border-black100: 1px solid var(--black-100);
 
+  --border2x-black100: 2px solid var(--black-100);
+  --border2x-gray200: 2px solid var(--gray-200);
+
   /* SHADOWS */
   --shadow-black: 0px 4px 8px rgba(0, 0, 0, 0.2);
 
@@ -76,6 +79,7 @@
 
   --btn-bg-black: rgba(0, 0, 0, 0.2);
   --btn-bg-gray: rgba(244, 244, 244, 0.5);
+  --btn-bg-gray100: rgba(244, 244, 244, 0.9);
   --btn-bg-gray200: rgba(56, 59, 64, 0.8);
 
   /* THEME BG */
@@ -120,6 +124,10 @@ li {
 a:active,
 a:visited {
   color: inherit;
+}
+
+.activeLink {
+  border-bottom: 1px solid var(--green-200);
 }
 h1 {
   font-family: var(--nunito);
@@ -179,6 +187,9 @@ p {
 
 .gap-1 {
   gap: 1rem;
+}
+.pt-1 {
+  padding-top: 1rem;
 }
 .padding-2 {
   padding: 2rem 0;

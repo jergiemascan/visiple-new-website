@@ -37,6 +37,22 @@
   padding: var(--xxs);
   letter-spacing: 0.2px;
 }
+.formGroup a {
+  border-bottom: var(--border-gray200);
+  font-weight: 500;
+  margin-left: 0.2rem;
+  transition: box-shadow 0.33s cubic-bezier(0.5, 0, 0, 0.75),
+    border-bottom 0.33s ease;
+}
+.formGroup a:hover {
+  border-bottom: var(--border2x-gray200);
+}
+
+.formGroup p,
+.formGroup a {
+  font-size: var(--semi-md);
+  font-weight: 500;
+}
 .formGroup textarea {
   min-height: 8.5rem;
 }

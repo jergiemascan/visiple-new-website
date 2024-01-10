@@ -8,7 +8,8 @@ import styles from "./productsHero.module.css"
 const Products = () => {
   return (
     <section>
-      <HeroComponent
+      <h4>Products and Plans here</h4>
+      {/* <HeroComponent
         src="/images/products/product-hero.png"
         alt="Video conference from home, hero"
         priority
@@ -29,7 +30,7 @@ const Products = () => {
           {...products}
           reverse={index % 2 !== 0}
         />
-      ))}
+      ))} */}
     </section>
   )
 }

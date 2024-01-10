@@ -4,7 +4,7 @@
   margin: 0 auto;
 }
 .title {
-  font-size: var(--xl-plus);
+  font-size: var(--xxl);
 }
 
 .contactInfo {
@@ -16,6 +16,7 @@
   font-family: var(--nunito);
   letter-spacing: 0.8px;
   line-height: 1.6;
+  font-weight: 800;
 }
 .contactInfo p {
   font-size: var(--md);
@@ -24,6 +25,9 @@
   font-size: var(--xl-plus);
   font-family: var(--nunito);
   color: var(--green-200);
+}
+.phone {
+  padding-top: 0.5rem;
 }
 .mailto {
   border-bottom: var(--border-gray200);
@@ -34,7 +38,6 @@
 }
 .imageWrapper img {
   border-radius: 6px;
-  /* border: var(--border-gray); */
 }
 
 @media only screen and (min-width: 500px) {
@@ -45,11 +48,12 @@
   .addressWrapper {
     grid-column: 2 / span 10;
   }
-  .title {
-    font-size: var(--xxl);
-  }
 }
+
 @media only screen and (min-width: 600px) {
+  .title {
+    font-size: var(--xxl-plus);
+  }
   .contactInfo h2 {
     font-size: var(--xxl);
   }
@@ -57,9 +61,6 @@
 @media only screen and (min-width: 700px) {
   .addressWrapper {
     grid-column: 3 / span 8;
-  }
-  .title {
-    font-size: var(--xxl-plus);
   }
 }
 
@@ -80,7 +81,8 @@
   }
 
   .contactInfo {
-    margin-top: 6.5rem;
+    /* margin-top: 6.5rem; */
+    margin-top: 3.5rem;
   }
 }
 

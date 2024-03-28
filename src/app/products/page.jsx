@@ -9,7 +9,7 @@ const Products = () => {
   return (
     <section>
       <h4>Products and Plans here</h4>
-      {/* <HeroComponent
+       <HeroComponent
         src="/images/products/product-hero.png"
         alt="Video conference from home, hero"
         priority
@@ -30,7 +30,7 @@ const Products = () => {
           {...products}
           reverse={index % 2 !== 0}
         />
-      ))} */}
+      ))} 
     </section>
   )
 }

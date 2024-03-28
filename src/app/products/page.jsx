@@ -8,8 +8,7 @@ import styles from "./productsHero.module.css"
 const Products = () => {
   return (
     <section>
-      <h4>Products and Plans here</h4>
-       <HeroComponent
+      <HeroComponent
         src="/images/products/product-hero.png"
         alt="Video conference from home, hero"
         priority
